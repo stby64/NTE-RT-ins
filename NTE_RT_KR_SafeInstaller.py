@@ -12,8 +12,8 @@ from tkinter import BOTH, DISABLED, END, LEFT, NORMAL, RIGHT, Button, Checkbutto
 from tkinter.scrolledtext import ScrolledText
 
 
-APP_NAME = "NTE RT 한국어 안전 설치기"
-APP_VERSION = "0.3.1"
+APP_NAME = "NTE RT 한국어 실험용 설치기"
+APP_VERSION = "0.4.0"
 APP_DIR = Path(__file__).resolve().parent
 DEFAULT_GAME_DIR = Path(r"C:\Program Files\Neverness To Everness")
 BACKUP_DIR_NAME = "_nte_rt_kr_backups"
@@ -382,13 +382,13 @@ class Gui:
         self.win64_path = StringVar()
         self.opt_path = StringVar(value=str(APP_DIR / "OptiScaler") if (APP_DIR / "OptiScaler").is_dir() else "")
         self.profile = StringVar(value="RTX 5090 추천")
-        self.proxy_dll = StringVar(value="dxgi.dll")
+        self.proxy_dll = StringVar(value="winmm.dll")
         self.allow_existing_proxy = StringVar(value="0")
         self._build()
 
     def _build(self) -> None:
-        Label(self.root, text="NTE 레이트레이싱 언락 설치/원복", font=("Malgun Gothic", 16, "bold")).pack(pady=(14, 6))
-        Label(self.root, text="자동 다운로드 없음. 선택한 OptiScaler 폴더와 게임 Win64 폴더에만 작업합니다.").pack()
+        Label(self.root, text="NTE 레이트레이싱 언락 실험용 설치/원복", font=("Malgun Gothic", 16, "bold")).pack(pady=(14, 6))
+        Label(self.root, text="실험용 도구입니다. 게임 보안 차단/계정 제재/크래시 위험은 사용자 책임입니다.").pack()
         self._row("NTE 폴더 또는 실행파일", self.game_path, self.pick_game_folder, self.pick_game_exe, self.detect_game)
         self._row("OptiScaler 압축 해제 폴더", self.opt_path, self.pick_opt_folder, None, None)
         row = Frame(self.root)
@@ -413,7 +413,8 @@ class Gui:
         self.say("1. NTE 설치 폴더를 선택하고 Win64 찾기를 누르세요.")
         self.say("2. 못 찾으면 Win64 폴더 안의 실제 게임 .exe를 'EXE 선택'으로 직접 고르세요.")
         self.say("3. OptiScaler 공식 Release .7z를 직접 압축 해제한 폴더를 선택하세요.")
-        self.say("4. 설치 후에는 이 프로그램을 매번 켤 필요가 없습니다.")
+        self.say("4. 권장 프록시는 winmm.dll입니다. dxgi.dll은 보안 차단 가능성이 더 큽니다.")
+        self.say("5. 설치 후에는 이 프로그램을 매번 켤 필요가 없습니다.")
 
     def _row(self, label: str, var: StringVar, pick_folder_cmd, pick_file_cmd, detect_cmd) -> None:
         row = Frame(self.root)
