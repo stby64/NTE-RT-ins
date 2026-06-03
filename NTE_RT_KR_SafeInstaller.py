@@ -12,8 +12,8 @@ from tkinter import BOTH, DISABLED, END, LEFT, NORMAL, RIGHT, Button, Checkbutto
 from tkinter.scrolledtext import ScrolledText
 
 
-APP_NAME = "NTE RT 한국어 실험용 설치기"
-APP_VERSION = "0.4.0"
+APP_NAME = "NTE RT Installer"
+APP_VERSION = "0.4.1"
 APP_DIR = Path(__file__).resolve().parent
 DEFAULT_GAME_DIR = Path(r"C:\Program Files\Neverness To Everness")
 BACKUP_DIR_NAME = "_nte_rt_kr_backups"
@@ -311,8 +311,6 @@ def install(win64: Path, opt_folder: Path, profile_name: str, proxy_dll: str, al
             continue
         if item.is_file() and item.suffix.lower() in {".dll", ".ini"}:
             shutil.copy2(item, opt_dir / item.name)
-        elif item.is_dir() and item.name == "D3D12_Optiscaler":
-            shutil.copytree(item, opt_dir / item.name)
     shutil.copy2(template_ini, opt_dir / "_source_OptiScaler.ini")
     (win64 / "OptiScaler.ini").write_text(build_config(template_ini, game_exe, profile_name), encoding="ascii", errors="ignore")
     (win64 / "OptiScaler.log").write_text("", encoding="utf-8")
@@ -387,7 +385,7 @@ class Gui:
         self._build()
 
     def _build(self) -> None:
-        Label(self.root, text="NTE 레이트레이싱 언락 실험용 설치/원복", font=("Malgun Gothic", 16, "bold")).pack(pady=(14, 6))
+        Label(self.root, text="NTE RT Installer", font=("Malgun Gothic", 16, "bold")).pack(pady=(14, 6))
         Label(self.root, text="실험용 도구입니다. 게임 보안 차단/계정 제재/크래시 위험은 사용자 책임입니다.").pack()
         self._row("NTE 폴더 또는 실행파일", self.game_path, self.pick_game_folder, self.pick_game_exe, self.detect_game)
         self._row("OptiScaler 압축 해제 폴더", self.opt_path, self.pick_opt_folder, None, None)

@@ -1,6 +1,6 @@
 # Notice
 
-This project is a small Korean experimental installer around an OptiScaler-based NTE ray tracing unlock workflow.
+This project is a small Korean installer around an OptiScaler-based NTE ray tracing unlock workflow.
 
 This tool is experimental and is provided without any safety guarantee. It places local proxy DLLs in a game directory. Game security blocks, crashes, launcher verification issues, and account penalties may happen. Use is entirely at the user's own risk.
 
