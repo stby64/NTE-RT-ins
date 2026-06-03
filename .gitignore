@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+downloads/
+OptiScaler/
+*.7z
+*.zip
+*.rar
+*.dll
+*.log
+_nte_rt_kr_backups/
+.venv/
+dist/
+build/
+
