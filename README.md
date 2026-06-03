@@ -26,15 +26,20 @@ https://github.com/optiscaler/OptiScaler/releases/latest
 
 ## 사용법
 
-1. NTE와 런처를 완전히 종료합니다.
-2. `run_as_admin.bat`을 실행합니다.
-3. Windows 권한 확인창을 허용합니다.
-4. `Win64 찾기`를 누릅니다.
-5. OptiScaler 압축 해제 폴더를 선택합니다.
-6. 프록시는 우선 `dxgi.dll`을 권장합니다.
-7. `상태 확인`을 누릅니다.
-8. `백업 후 설치`를 누릅니다.
-9. 게임을 켜고 그래픽 프리셋을 극치/Ultra 이상으로 설정합니다.
+1. Python 3을 설치합니다.
+   - https://www.python.org/downloads/windows/
+   - 설치 중 `Add python.exe to PATH`를 체크하는 것을 권장합니다.
+2. NTE와 런처를 완전히 종료합니다.
+3. `run_as_admin.bat`을 실행합니다.
+4. Windows 권한 확인창을 허용합니다.
+5. `Win64 찾기`를 누릅니다.
+6. OptiScaler 압축 해제 폴더를 선택합니다.
+7. 프록시는 우선 `dxgi.dll`을 권장합니다.
+8. `상태 확인`을 누릅니다.
+9. `백업 후 설치`를 누릅니다.
+10. 게임을 켜고 그래픽 프리셋을 극치/Ultra 이상으로 설정합니다.
+
+`py` 또는 `python`을 찾을 수 없다는 메시지가 나오면 Python 3이 설치되어 있지 않거나 PATH에 잡혀 있지 않은 것입니다. Python을 설치한 뒤 다시 실행하세요.
 
 ## 문제 해결
 
@@ -52,4 +57,3 @@ OptiScaler 오버레이가 보이면 로드는 성공한 것입니다.
 
 - OptiScaler: https://github.com/optiscaler/OptiScaler
 - Original reference workflow: https://github.com/llg1634/nte-ray-tracing-panel
-
