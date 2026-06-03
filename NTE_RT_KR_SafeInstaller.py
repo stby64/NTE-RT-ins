@@ -13,11 +13,11 @@ from tkinter.scrolledtext import ScrolledText
 
 
 APP_NAME = "NTE RT 한국어 안전 설치기"
-APP_VERSION = "0.3.0"
+APP_VERSION = "0.3.1"
 APP_DIR = Path(__file__).resolve().parent
 DEFAULT_GAME_DIR = Path(r"C:\Program Files\Neverness To Everness")
 BACKUP_DIR_NAME = "_nte_rt_kr_backups"
-PROXY_DLLS = ("winmm.dll", "dxgi.dll", "d3d12.dll")
+PROXY_DLLS = ("winmm.dll", "dxgi.dll")
 MANAGED_FILES = (*PROXY_DLLS, "OptiScaler.ini", "OptiScaler.log")
 MANAGED_DIRS = ("OptiScaler",)
 KNOWN_GAME_EXES = ("HTGame.exe", "NTEGlobalGame.exe")
@@ -382,7 +382,7 @@ class Gui:
         self.win64_path = StringVar()
         self.opt_path = StringVar(value=str(APP_DIR / "OptiScaler") if (APP_DIR / "OptiScaler").is_dir() else "")
         self.profile = StringVar(value="RTX 5090 추천")
-        self.proxy_dll = StringVar(value="d3d12.dll")
+        self.proxy_dll = StringVar(value="dxgi.dll")
         self.allow_existing_proxy = StringVar(value="0")
         self._build()
 
